@@ -1,9 +1,11 @@
 # Leaflet Rotated Marker
 
-Enables rotation of marker icons in Leaflet.
+Enables rotation of marker icons in Leaflet. [Demo](https://abdulk1.github.io/Leaflet.RotatedMarker/)
+
+[![npm version](https://badge.fury.io/js/mapbminimap.svg)](https://www.npmjs.com/package/leaflet-marker-rotation)
 
 ```bash
-npm install leaflet.rotatedmarker
+npm install leaflet-marker-rotation
 ```
 
 ## Usage

@@ -2,7 +2,7 @@
 
 Enables rotation of marker icons in Leaflet. [Demo](https://abdulk1.github.io/Leaflet.RotatedMarker/)
 
-[![npm version](https://badge.fury.io/js/mapbminimap.svg)](https://www.npmjs.com/package/leaflet-marker-rotation)
+[![npm version](https://badge.fury.io/js/leaflet-marker-rotation.svg)](https://www.npmjs.com/package/leaflet-marker-rotation)
 
 ```bash
 npm install leaflet-marker-rotation
@@ -13,6 +13,11 @@ npm install leaflet-marker-rotation
 ```js
 L.rotatedMarker([48.8631169, 2.3708919], {
   rotationAngle: 45,
+}).addTo(map);
+
+var marker = new L.RotatedMarker([48.8631169, 2.3708919], {
+  rotationAngle: 145,
+  rotationOrigin: "bottom center",
 }).addTo(map);
 ```
 
@@ -36,6 +41,6 @@ The default `rotationOrigin` value will rotate around the bottom center point, c
 
 ## Note
 
-On purpose, it doesn't rotate marker icon shadows. Mainly because there is no way to make it look good with the perspective of classic, pin type shadows (anyway, these shadows are so 2005, right?).
+It doesn't rotate marker icon shadows. There is no way to make it look good with the perspective of classic, pin type shadows.
 
-So just disable icon shadows, or use simple ones which will work for all marker angles.
+It's advised to disable icon shadows, or use simple ones which will work for all marker angles.

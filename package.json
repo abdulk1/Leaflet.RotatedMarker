@@ -1,20 +1,27 @@
 {
   "name": "leaflet-marker-rotation",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Leaflet plugin to enable the rotation of map marker icons",
-  "main": "src/index.js",
-  "author": "Abdul Khan <khan.abdul1@outlook.com>",
+  "private": false,
   "license": "MIT",
+  "author": {
+    "name": "Abdul Khan",
+    "email": "khan.abdul1@outlook.com"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:abdulk1/Leaflet.RotatedMarker.git"
   },
-  "scripts": {
-    "build": "rollup -c rollup.config.js"
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "scripts": {},
+  "dependencies": {
+    "@types/leaflet": "*"
   },
-  "devDependencies": {
-    "@rollup/plugin-buble": "^0.21.3",
-    "rollup": "^2.33.2",
-    "rollup-plugin-terser": "^7.0.2"
-  }
+  "devDependencies": {},
+  "keywords": [
+    "leaflet",
+    "marker",
+    "rotated"
+  ]
 }

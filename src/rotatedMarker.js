@@ -1,8 +1,8 @@
-const oldIE = L.DomUtil.TRANSFORM === "msTransform";
+var oldIE = L.DomUtil.TRANSFORM === "msTransform";
 
-L.RotatedMarker = L.Marker.addInitHook(function () {
-  const iconOptions = this.options.icon && this.options.icon.options;
-  let iconAnchor = iconOptions && this.options.icon.options.iconAnchor;
+export var RotatedMarker = (L.RotatedMarker = L.Marker.addInitHook(function () {
+  var iconOptions = this.options.icon && this.options.icon.options;
+  var iconAnchor = iconOptions && this.options.icon.options.iconAnchor;
   if (iconAnchor) {
     iconAnchor = iconAnchor[0] + "px " + iconAnchor[1] + "px";
   }
@@ -15,9 +15,9 @@ L.RotatedMarker = L.Marker.addInitHook(function () {
   this.on("drag", function (e) {
     e.target._applyRotation();
   });
-});
+}));
 
-export var RotatedMarker = (L.RotatedMarker = L.Marker.extend({
+L.RotatedMarker = L.Marker.extend({
   options: {
     rotationAngle: 0,
     rotationOrigin: "",
@@ -68,7 +68,7 @@ export var RotatedMarker = (L.RotatedMarker = L.Marker.extend({
     this.update();
     return this;
   },
-}));
+});
 
 L.rotatedMarker = function (latlng, options) {
   return new L.RotatedMarker(latlng, options);

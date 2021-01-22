@@ -1,6 +1,6 @@
 {
   "name": "leaflet-marker-rotation",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Leaflet plugin to enable the rotation of map marker icons",
   "private": false,
   "license": "MIT",
@@ -14,12 +14,16 @@
   },
   "main": "src/index.js",
   "types": "src/index.d.ts",
-  "scripts": {},
-  "dependencies": {
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {
     "@types/leaflet": "*"
   },
-  "devDependencies": {},
   "keywords": [
+    "gis",
+    "map",
     "leaflet",
     "marker",
     "rotated"

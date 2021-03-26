@@ -1,22 +1,5 @@
 var oldIE = L.DomUtil.TRANSFORM === "msTransform";
 
-export var RotatedMarker = (L.RotatedMarker = L.Marker.addInitHook(function () {
-  var iconOptions = this.options.icon && this.options.icon.options;
-  var iconAnchor = iconOptions && this.options.icon.options.iconAnchor;
-  if (iconAnchor) {
-    iconAnchor = iconAnchor[0] + "px " + iconAnchor[1] + "px";
-  }
-
-  this.options.rotationOrigin =
-    this.options.rotationOrigin || iconAnchor || "center bottom";
-  this.options.rotationAngle = this.options.rotationAngle || 0;
-
-  // Ensure marker keeps rotated during dragging
-  this.on("drag", function (e) {
-    e.target._applyRotation();
-  });
-}));
-
 L.RotatedMarker = L.Marker.extend({
   options: {
     rotationAngle: 0,
@@ -28,6 +11,21 @@ L.RotatedMarker = L.Marker.extend({
 
     L.Util.setOptions(this, options);
     this._latlng = L.latLng(latlng);
+
+    var iconOptions = this.options.icon && this.options.icon.options;
+    var iconAnchor = iconOptions && this.options.icon.options.iconAnchor;
+    if (iconAnchor) {
+      iconAnchor = iconAnchor[0] + "px " + iconAnchor[1] + "px";
+    }
+
+    this.options.rotationOrigin =
+      this.options.rotationOrigin || iconAnchor || "center bottom";
+    this.options.rotationAngle = this.options.rotationAngle || 0;
+
+    // Ensure marker keeps rotated during dragging
+    this.on("drag", function (e) {
+      e.target._applyRotation();
+    });
   },
 
   onRemove: function (map) {
@@ -73,3 +71,5 @@ L.RotatedMarker = L.Marker.extend({
 L.rotatedMarker = function (latlng, options) {
   return new L.RotatedMarker(latlng, options);
 };
+
+export var RotatedMarker = L.RotatedMarker;

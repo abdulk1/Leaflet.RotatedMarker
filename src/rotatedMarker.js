@@ -1,5 +1,3 @@
-var oldIE = L.DomUtil.TRANSFORM === "msTransform";
-
 L.RotatedMarker = L.Marker.extend({
   options: {
     rotationAngle: 0,
@@ -39,19 +37,11 @@ L.RotatedMarker = L.Marker.extend({
 
   _applyRotation: function () {
     if (this.options.rotationAngle) {
-      this._icon.style[
-        L.DomUtil.TRANSFORM + "Origin"
-      ] = this.options.rotationOrigin;
+      this._icon.style[L.DomUtil.TRANSFORM + "Origin"] =
+        this.options.rotationOrigin;
 
-      if (oldIE) {
-        // for IE 9, use the 2D rotation
-        this._icon.style[L.DomUtil.TRANSFORM] =
-          "rotate(" + this.options.rotationAngle + "deg)";
-      } else {
-        // for modern browsers, prefer the 3D accelerated version
-        this._icon.style[L.DomUtil.TRANSFORM] +=
-          " rotateZ(" + this.options.rotationAngle + "deg)";
-      }
+      this._icon.style[L.DomUtil.TRANSFORM] +=
+        " rotateZ(" + this.options.rotationAngle + "deg)";
     }
   },
 
